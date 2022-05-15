@@ -14,12 +14,12 @@ The motors and servos are connected as follows (this can be changed in the code)
 
 | Device | Arduino Nano Pin |
 | --- | --- |
-| Motor1 PWM | D9 |
-| Motor1 DIR | D8 |
-| Motor2 PWM | D10 |
-| Motor2 DIR | D11 |
-| Servo1 | D5 |
-| Servo2 | D6 |
+| Motor1 PWM | D5 |
+| Motor1 DIR | D7 |
+| Motor2 PWM | D6 |
+| Motor2 DIR | D8 |
+| Servo1 | D9 |
+| Servo2 | D10 |
 
 ## Connecting and accessing registers
 By default, the device is accessible at address 0x4C. This can be changed in the code. The device has 2 registers - 0x2C and 0x3C. 0x2C is the ping register and 0x3C is the command register. You can read a byte from the ping register - if it returns 0x31 (ACK), then it means the device is properly connected. In case of any error, it return 0x17 (NACK). To control the connected motors and servos, send a 4-byte packet to the command register as shown below.
